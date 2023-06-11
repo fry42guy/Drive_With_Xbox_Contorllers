@@ -29,7 +29,18 @@ public final static int Rear_Left_Drive = 3;
 public final static int Xbox_Drive_Contoller = 0;
 
 
+public static final class DrivePID {
+
+   public static final double DrivekP = .0005;
+   public static final double DrivekI = .001;
+   public static final double DrivekD = 0.0;
+    public static final double DriveFF = 0.0;
+    public static final double tolerance = 0;
 
 
 
 }
+
+
+}
+

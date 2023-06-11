@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 
@@ -41,20 +43,40 @@ m_TankDrive.setSafetyEnabled(false);
 
   }
 
-  public void Drive(double leftspeed, double rotatespeed){
+  public void ArcadeDrive(double xspeed, double rotatespeed){
 
-    m_TankDrive.arcadeDrive(leftspeed, rotatespeed);
-    System.out.println(leftspeed);
-
+    m_TankDrive.arcadeDrive(xspeed, rotatespeed);
   }
 
 
+  public void TankDrive(double leftspeed, double rightspeed){
+    m_TankDrive.tankDrive(leftspeed, rightspeed);
+  }
+   
 
+  
+public double getLeftEncoder(){
 
+ return m_FrontLeft.getSelectedSensorPosition();
+}
 
+public double getrightEncoder(double encodercount){
+  return m_FrontRight.getSelectedSensorPosition();
+}
+
+public void resetallencoders(){
+
+  m_FrontLeft.setSelectedSensorPosition(0);
+  m_RearLeft.setSelectedSensorPosition(0);
+  m_FrontRight.setSelectedSensorPosition(0);
+  m_RearRight.setSelectedSensorPosition(0);
+
+}
 
   @Override
   public void periodic() {
+
+    SmartDashboard.putNumber("Encoder count", getLeftEncoder());
     // This method will be called once per scheduler run
   }
 }

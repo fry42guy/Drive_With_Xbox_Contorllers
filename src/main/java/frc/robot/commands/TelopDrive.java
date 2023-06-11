@@ -34,7 +34,7 @@ this.rotatespeed = rotatespeed;
   @Override
   public void execute() {
 
-    m_DriveSubsystem.Drive(xspeed.getAsDouble() *Constants.MaxDriveSpeed, rotatespeed.getAsDouble()*Constants.MaxRoationSpeed);
+    m_DriveSubsystem.ArcadeDrive(xspeed.getAsDouble() *Constants.MaxDriveSpeed, rotatespeed.getAsDouble()*Constants.MaxRoationSpeed);
 
   }
 
