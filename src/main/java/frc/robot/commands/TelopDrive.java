@@ -35,8 +35,6 @@ this.rotatespeed = rotatespeed;
   public void execute() {
 
     m_DriveSubsystem.Drive(xspeed.getAsDouble() *Constants.MaxDriveSpeed, rotatespeed.getAsDouble()*Constants.MaxRoationSpeed);
-    SmartDashboard.putNumber("commanded xspeed", xspeed.getAsDouble());
-    System.out.println("runinng2");
 
   }
 
